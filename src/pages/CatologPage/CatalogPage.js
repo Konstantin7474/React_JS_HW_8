@@ -20,10 +20,10 @@ const CatalogPage = () => {
   };
 
   const filteredProducts =
-    selectedSizes.lenth > 0
-      ? products.filter((product) =>
-          product.size.some((size) => selectedSizes.includes(size))
-        )
+    selectedSizes.length > 0
+      ? products.filter((product) => {
+          return selectedSizes.includes(product.size);
+        })
       : products;
 
   return (
@@ -43,7 +43,6 @@ const CatalogPage = () => {
           </a>
         </nav>
       </div>
-
       <div className="filter-sort center">
         <div className="filter-shadow">
           <details className="filter">
@@ -225,45 +224,17 @@ const CatalogPage = () => {
             </summary>
 
             <div className="sort__box">
-              <div className="sort__check">
-                <input
-                  id="sort__check2"
-                  type="checkbox"
-                  value="S"
-                  onChange={handleSizeChange}
-                />
-                <label htmlFor="sort__check2">S</label>
-              </div>
-
-              <div className="sort__check">
-                <input
-                  id="sort__check1"
-                  type="checkbox"
-                  value="XS"
-                  onChange={handleSizeChange}
-                />
-                <label htmlFor="sort__check1">XS</label>
-              </div>
-
-              <div className="sort__check">
-                <input
-                  id="sort__check3"
-                  type="checkbox"
-                  value="L"
-                  onChange={handleSizeChange}
-                />
-                <label htmlFor="sort__check3">L</label>
-              </div>
-
-              <div className="sort__check">
-                <input
-                  id="sort__check3"
-                  type="checkbox"
-                  value="M"
-                  onChange={handleSizeChange}
-                />
-                <label htmlFor="sort__check3">M</label>
-              </div>
+              {["S", "XS", "L", "M"].map((size) => (
+                <div className="sort__check" key={size}>
+                  <input
+                    id={`sort__check2_${size}`}
+                    type="checkbox"
+                    value={size}
+                    onChange={handleSizeChange}
+                  />
+                  <label htmlFor={`sort__check2_${size}`}>{size}</label>
+                </div>
+              ))}
             </div>
           </details>
 
@@ -286,7 +257,6 @@ const CatalogPage = () => {
           </details>
         </div>
       </div>
-
       <div className="main_content_3">
         <ProductsList limit={9} products={filteredProducts} />
       </div>
@@ -352,7 +322,6 @@ const CatalogPage = () => {
           </svg>
         </span>
       </div>
-
       <Footer />
     </>
   );

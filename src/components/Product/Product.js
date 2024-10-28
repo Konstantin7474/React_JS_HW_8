@@ -1,11 +1,32 @@
 import { Link } from "react-router-dom";
 
-const Product = ({ image, title, description, price }) => {
+const Product = ({ image, title, description, price, size }) => {
+  const addToCart = () => {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const existingProductIndex = cart.findIndex((item) => item.image === image);
+
+    if (existingProductIndex >= 0) {
+      cart[existingProductIndex].quantity += 1;
+    } else {
+      cart.push({
+        title,
+        image,
+        description,
+        price,
+        size,
+        quantity: 1,
+      });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+  };
+
   return (
     <div className="item_1">
       <div className="img__bg"></div>
 
-      <a className="main_content_3__cart_link" href="./cart.html">
+      <button className="main_content_3__cart_link" onClick={addToCart}>
         <div className="main_content_3__browse">
           <svg
             className="main_content_3__svg3"
@@ -31,7 +52,7 @@ const Product = ({ image, title, description, price }) => {
 
           <h2 className="main_content_3__browse_text">Add to Cart</h2>
         </div>
-      </a>
+      </button>
 
       <img className="item_1_picture" src={image} alt={title} />
       <div className="item_1_content">
@@ -39,7 +60,10 @@ const Product = ({ image, title, description, price }) => {
           <h1 className="title_1_item_1">{title}</h1>
         </Link>
         <h2 className="title_2_item_1">{description}</h2>
-        <h3 className="title_3_item_1">{price}</h3>
+        <div className="div">
+          <h3 className="title_3_item_1">{size}</h3>
+          <h3 className="title_3_item_1">{price}</h3>
+        </div>
       </div>
     </div>
   );

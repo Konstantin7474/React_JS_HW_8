@@ -1,13 +1,12 @@
 import Product from "../Product/Product";
-import products from "../../data/productsData";
-import { useState } from "react";
+import defaultProducts from "../../data/productsData";
 
-const ProductsList = ({ limit }) => {
-  const displayedProducts = limit ? products.slice(0, limit) : products;
-
-  /* const filtredProducts = selectedSize
-    ? displayedProducts.filter((product) => product.size === selectedSize)
-    : displayedProducts; */
+const ProductsList = ({ limit, products }) => {
+  const productsToDisplay =
+    products && products.length > 0 ? products : defaultProducts;
+  const displayedProducts = limit
+    ? productsToDisplay.slice(0, limit)
+    : displayedProducts;
 
   return (
     <>
@@ -19,6 +18,7 @@ const ProductsList = ({ limit }) => {
             title={product.title}
             description={product.description}
             price={product.price}
+            size={product.size}
           />
         ))}
       </div>

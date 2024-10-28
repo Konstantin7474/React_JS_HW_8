@@ -1,8 +1,5 @@
 import CartFooter from "../../components/CartFooter/CartFooter";
 import Header from "../../components/Header/Header";
-import item_4 from "../../assets/img/item_4.svg";
-import product3 from "../../assets/img/product3.jpeg";
-import item_6 from "../../assets/img/item_6.svg";
 import slider_product from "../../assets/img/slider_product.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -196,61 +193,8 @@ const ProductCard = () => {
 
       <main>
         <div className="cart_main_content_3">
-          <div className="cart_main_content_3__items">
-            <div className="cart_main_content_3__item_1">
-              <img
-                className="cart_main_content_3__picture"
-                src={item_4}
-                alt="item_4"
-              />
-              <div className="cart_main_content_3__content">
-                <h1 className="cart_main_content_3__title_1_item_1">
-                  ELLERY X M'O CAPSULE
-                </h1>
-                <h2 className="cart_main_content_3__title_2_item_1">
-                  Known for her sculptural takes on traditional tailoring,
-                  Australian arbiter of cool Kym Ellery teams up with Moda
-                  Operandi.
-                </h2>
-                <h3 className="cart_main_content_3__title_3_item_1">$52.00</h3>
-              </div>
-            </div>
-            <div className="cart_main_content_3__item_1">
-              <img
-                className="cart_main_content_3__picture"
-                src={product3}
-                alt="item_5"
-              />
-              <div className="cart_main_content_3__content">
-                <h1 className="cart_main_content_3__title_1_item_1">
-                  ELLERY X M'O CAPSULE
-                </h1>
-                <h2 className="cart_main_content_3__title_2_item_1">
-                  Known for her sculptural takes on traditional tailoring,
-                  Australian arbiter of cool Kym Ellery teams up with Moda
-                  Operandi.
-                </h2>
-                <h3 className="cart_main_content_3__title_3_item_1">$52.00</h3>
-              </div>
-            </div>
-            <div className="cart_main_content_3__item_1">
-              <img
-                className="cart_main_content_3__picture"
-                src={item_6}
-                alt="item_6"
-              />
-              <div className="cart_main_content_3__content">
-                <h1 className="cart_main_content_3__title_1_item_1">
-                  ELLERY X M'O CAPSULE
-                </h1>
-                <h2 className="cart_main_content_3__title_2_item_1">
-                  Known for her sculptural takes on traditional tailoring,
-                  Australian arbiter of cool Kym Ellery teams up with Moda
-                  Operandi.
-                </h2>
-                <h3 className="cart_main_content_3__title_3_item_1">$52.00</h3>
-              </div>
-            </div>
+          <div className="main_content_3">
+            <ProductsList limit={3} />
           </div>
         </div>
       </main>

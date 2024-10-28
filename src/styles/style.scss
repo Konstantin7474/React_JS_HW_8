@@ -342,7 +342,7 @@ summary::-webkit-details-marker {
   align-items: center;
   gap: 41px;
 }
-.logo_loupe{
+.logo_loupe {
   padding-top: 5px;
 }
 
@@ -356,7 +356,7 @@ summary::-webkit-details-marker {
   align-items: center;
   gap: 33px;
 }
-.burger_menu{
+.burger_menu {
   padding-top: 12px;
   padding-left: 2px;
 }
@@ -366,7 +366,7 @@ summary::-webkit-details-marker {
   fill: #f16d7f;
 }
 
-.logo_person{
+.logo_person {
   padding-top: 6px;
 }
 
@@ -375,7 +375,7 @@ summary::-webkit-details-marker {
   fill: #f16d7f;
 }
 
-.logo_cart{
+.logo_cart {
   padding-top: 9px;
 }
 
@@ -485,11 +485,11 @@ summary::-webkit-details-marker {
   }
   @media screen and (max-width: 426px) {
     .title_1 {
-        margin-left: 0;
+      margin-left: 0;
     }
   }
 }
-.title_main_1{
+.title_main_1 {
   height: 92px;
   width: 12px;
   margin-top: 2px;
@@ -510,7 +510,6 @@ summary::-webkit-details-marker {
   padding-bottom: 89px;
   padding-left: calc(50% - 570px);
   padding-right: calc(50% - 570px);
-  
 
   .block_1_main_content_2 {
     display: block;
@@ -719,6 +718,10 @@ summary::-webkit-details-marker {
       visibility: hidden;
       opacity: 0;
       transition: visibility ease 0s, opacity ease 1s;
+      background: none;
+      border: none;
+      cursor: pointer;
+      
     }
 
     .main_content_3__browse {
@@ -963,14 +966,12 @@ summary::-webkit-details-marker {
     margin-right: 60px;
     margin-left: 25px;
   }
-
 }
 
 @media screen and (max-width: 768px) {
   .footer_photo {
     margin-left: 40px;
   }
-
 }
 
 @media screen and (max-width: 426px) {
@@ -978,7 +979,6 @@ summary::-webkit-details-marker {
     margin-left: 50px;
     margin-right: 50px;
   }
-
 }
 
 .footer_sub1,
@@ -2244,4 +2244,9 @@ summary::-webkit-details-marker {
     margin-left: 9px;
     margin-bottom: 96px;
   }
+}
+
+.div {
+  display: flex;
+  gap: 275px;
 }
